@@ -1,0 +1,475 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Nightly Test Suite" verbose ="3" parallel="tests" thread-count="5">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <!-- Billing ************START ********************************** -->
+    <test name="Visit Billing Regression Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitBillingRegressionTest"/>
+        </classes>
+    </test>
+    <test name="Admin Bill Credit Card Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.billingTests.AdminBillCreditCardTest"/>
+        </classes>
+    </test>
+    <!-- Billing ************END ********************************** -->
+
+
+    <!-- Admin Configurations ************START ********************************** -->
+    <test name="Admin Create Practice Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminCreatePracticeTest"/>
+        </classes>
+    </test>
+    <test name="Admin Enroll Admin Account Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminEnrollAdminAccountTest"/>
+        </classes>
+    </test>
+    <test name="Admin Lock Unlock User Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminLockUnlockUserTest"/>
+        </classes>
+    </test>
+    <test name="Admin Manage Practice Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminManagePracticeTest"/>
+        </classes>
+    </test>
+    <test name="Admin Disable Intake Insurance Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminDisableIntakeInsurancePageTest"/>
+        </classes>
+    </test>
+    <test name="Admin Can Add New Provider Type Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminCanAddNewProviderTypeTest"/>
+        </classes>
+    </test>
+    <test name="Admin Configure User Feedback Questions Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminConfigureConsumerFeedbackQuestionTest"></class>
+        </classes>
+    </test>
+    <test name="Admin Edit Provider Section Visibility Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.configurationTests.AdminEditProviderSectionVisibilityTest" />
+        </classes>
+    </test>
+
+    <!-- Admin Configurations ************END ********************************** -->
+
+
+
+
+    <!-- Coupon ************START ********************************** -->
+    <test name="Admin Create New Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.AdminCreateNewCouponTest"/>
+        </classes>
+    </test>
+    <test name="Admin Edit New Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.AdminEditNewCouponTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Redeem Free Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.ConsumerRedeemFreeCouponTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Redeem Non Free Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.ConsumerRedeemNonFreeCouponTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Redeem Single Use Free Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.ConsumerRedeemSingleUseFreeCouponTest"/>
+        </classes>
+    </test>
+    <test name="Coupon Eligibility Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.CouponEligibilityTest"/>
+        </classes>
+    </test>
+    <test name="Coupon Limit Use Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.CouponLimitUseTest"/>
+        </classes>
+    </test>
+    <test name="Dependent Redeem Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.DependentRedeemCouponTest"/>
+        </classes>
+    </test>
+    <test name="Provider set cost to zero so consumer intake coupon and payment page skipped" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.ProviderSetZeroCostTest"/>
+        </classes>
+    </test>
+    <test name="Schedule Appointment With Coupon Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.couponTests.ScheduleApptWithCouponTest"/>
+        </classes>
+    </test>
+    <!-- Coupon ************END ********************************** -->
+
+
+
+    <!-- Demographics ************START ********************************** -->
+    <test name="Consumer Edit Certification Of Location Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.demographicsTests.ConsumerCertificationOfLocationTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Edit Identification Info Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.demographicsTests.ConsumerEditIdentificationTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Demographics Location Values Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.demographicsTests.ConsumerEnrollmentStateDropdownTest"/>
+        </classes>
+    </test>
+    <test name="Provider Edit Patient Record Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.demographicsTests.ProviderEditPatientRecordTest"/>
+        </classes>
+    </test>
+    <test name="Staff Edit Patient Record Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.demographicsTests.StaffEditPatientRecordTest"/>
+        </classes>
+    </test>
+    <!-- Demographics ************END ********************************** -->
+
+
+    <!-- Engagement related tests ************START ********************************** -->
+    <test name="Multi-way Visit Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.MultiwayWebRTCVisitRegressionTest"/>
+        </classes>
+    </test>
+    <test name="Provider Cancel Visit During Wrap Up Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.ProviderCancelVisitDuringWrapUpTest"/>
+        </classes>
+    </test>
+    <test name="Provider Visit Console Drawer Visit Test 2" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.ProviderVisitConsoleDrawerTest2"/>
+        </classes>
+    </test>
+    <test name="Provider Visit Console Drawer Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.ProviderVisitConsoleDrawerTest"/>
+        </classes>
+    </test>
+    <test name="THN Web Service Schedule In State Visit Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.THNWebServiceScheduleVisitInStateTest"/>
+        </classes>
+    </test>
+    <test name="THN Web Service Schedule Visit Out Of State Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.THNWebServiceScheduleVisitOutOfStateTest"/>
+        </classes>
+    </test>
+    <test name="Visit Console Drawer Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.VisitConsoleDrawerTest"/>
+        </classes>
+    </test>
+    <test name="Visit Intake Regression Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitIntakeRegressionTest"/>
+        </classes>
+    </test>
+    <test name="Visit Regression Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitRegressionTest"/>
+        </classes>
+    </test>
+    <test name="Visit Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.VisitTest"/>
+        </classes>
+    </test>
+    <test name="Visit Transfer Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.VisitTransferTest"/>
+        </classes>
+    </test>
+    <test name="Visit Wrap Up Regression Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitWrapUpRegressionTest"/>
+        </classes>
+    </test>
+    <test name="Visit Wrap Up Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.VisitWrapUpTest"/>
+        </classes>
+    </test>
+    <test name="Intake Validations Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.IntakeValidationsTest"/>
+        </classes>
+    </test>
+    <test name="Cross Platform And Browser Visit Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.CrossPlatformAndBrowserVisitTest"/>
+        </classes>
+    </test>
+    <test name="Staff Declines Visit From Waiting Room Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.StaffDeclinesVisitTest"/>
+        </classes>
+    </test>
+    <test name="Consumer validates Phone visit Waiting Room Texts" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.engagementTests.PhoneVisitWaitingRoomValidationsTest"/>
+        </classes>
+    </test>
+    <!-- Visit/Engagement related tests ************END ********************************** -->
+
+
+    <!-- Enrollment ************START ********************************** -->
+    <test name="Admin Enroll Global Staff Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.enrollmentTests.AdminEnrollGlobalStaffTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Enrollment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.enrollmentTests.ConsumerEnrollmentTest"/>
+        </classes>
+    </test>
+    <test name="Provider Enrollment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.enrollmentTests.ProviderEnrollmentTest"/>
+        </classes>
+    </test>
+    <!-- Enrollment ************END ********************************** -->
+
+    
+    <!-- Epic CAL  ************START ********************************** -->
+    <test name="Epic Visit Launch App Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.epicLaunchTest.EpicVisitLaunchAppTest"/>
+        </classes>
+    </test>
+    <test name="EHR patient launch visit app test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.epicLaunchTest.ConsumerLaunchAppTest"/>
+        </classes>
+    </test>
+    <test name="Epic patient Visit intake Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.intakeTest.ConsumerIntakeTest"/>
+        </classes>
+    </test>
+    <test name="EHR provider launch visit app test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.epicLaunchTest.ProviderLaunchAppTest"/>
+        </classes>
+    </test>
+    <test name="Epic Visit Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.visitTest.EpicCALVisitTest"/>
+        </classes>
+    </test>
+    <test name="Visit Console Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.visitTest.VisitConsoleTest"/>
+        </classes>
+    </test>
+    <test name="Multiway Visit Console Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.visitTest.MultiwayVisitTest"/>
+        </classes>
+    </test>
+    <test name="Admin Manage Epic Integration Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.epicCAL.AdminManageEpicIntegrationTest"/>
+        </classes>
+    </test>
+    <!-- Epic CAL ************END ********************************** -->
+
+
+    <!-- Log in ************START ********************************** -->
+    <test name="Consumer Login Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ConsumerLoginTest"/>
+        </classes>
+    </test>
+    <test name="Dependent Enroll And Login Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.DependentEnrollmentAndLoginTest"/>
+        </classes>
+    </test>
+    <test name="Provider Edit Login Credentials Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ProviderEditCredentialsTest"/>
+        </classes>
+    </test>
+    <test name="Provider Login Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ProviderLoginTest"/>
+        </classes>
+    </test>
+    <!-- Log in ************END ********************************** -->
+
+
+    <!-- Message ************START ********************************** -->
+    <test name="Add Contacts Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.AddContactsTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Send Message Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.ConsumerSendMessageTest"/>
+        </classes>
+    </test>
+    <test name="Message Center Pagination Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.MessageCenterPaginationTest"/>
+        </classes>
+    </test>
+    <test name="Provider Can Receive Invitation Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.ProviderCanReceiveInvitationTest"/>
+        </classes>
+    </test>
+    <test name="Provider Send Secure Message Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.ProviderSendMessageTest"/>
+        </classes>
+    </test>
+    <test name="Staff Send Message Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.messageTests.StaffSendMessageTest"/>
+        </classes>
+    </test>
+    <!-- Message ************END ********************************** -->
+
+
+    <!-- Navigation ************START ********************************** -->
+    <test name="Admin Navigation Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.AdminNavigationTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Navigation Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.ConsumerNavigationTest"/>
+        </classes>
+    </test>
+    <test name="Provider Navigation Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.ProviderNavigationTest"/>
+        </classes>
+    </test>
+    <test name="Staff Navigation Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.StaffNavigationTest"/>
+        </classes>
+    </test>
+    <!-- Navigation ************END ********************************** -->
+
+
+    <!-- Provider Admin  ************START ********************************** -->
+    <test name="Provider Personal Admin Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderPersonalAdminTest"/>
+        </classes>
+    </test>
+    <test name="Provider Practice Admin Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderPracticeSettingsTest"/>
+        </classes>
+    </test>
+    <test name="Provider Hide Visit Cost Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderHideVisitCostTest"/>
+        </classes>
+    </test>
+    <test name="Provider Hide Insurance Page Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderHideInsurancePageDuringIntakeTest"/>
+        </classes>
+    </test>
+    <test name="Provider Enable Deferred Billing Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderEnableDeferredBillingTest"/>
+        </classes>
+    </test>
+    <test name="Provider Enable Collect Credit Card When Scheduling Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.providerAdminTests.ProviderEnableCollectCreditCardWhenSchedulingTest"/>
+        </classes>
+    </test>
+    <!-- Provider Admin ************END ********************************** -->
+
+
+    <!-- Scheduling ************START ********************************** -->
+    <test name="Admin Schedule Appointment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.AdminScheduleAppointmentTest"/>
+        </classes>
+    </test>
+    <test name="Admin Search Appointments Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.AdminSearchAppointmentTest"/>
+        </classes>
+    </test>
+    <test name="Consumer Schedule Appointment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.ConsumerScheduleAppointmentTest"/>
+        </classes>
+    </test>
+    <test name="Global staff full THN workflow using Find providers by date Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.GlobalStaffTHNWorkflowTest"/>
+        </classes>
+    </test>
+    <test name="Provider Add / Edit / Delete Recurring Availability Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.ProviderRecurringAvailabilityWebTest"/>
+        </classes>
+    </test>
+    <test name="Provider Schedule Appointment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.ProviderScheduleAppointmentTest"/>
+        </classes>
+    </test>
+    <test name="SOAP Schedule Appointment Email Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.SOAPScheduleAppointmentEmailTest"/>
+        </classes>
+    </test>
+    <test name="Staff Add / Edit / Delete Provider Recurring Availability Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.StaffRecurringAvailabilityTest"/>
+        </classes>
+    </test>
+    <test name="Practice Staff Schedule Appointment Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.schedulingTests.PracticeStaffScheduleAppointmentTest"/>
+        </classes>
+    </test>
+    <test name="Visit Scheduling Regression Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitSchedulingRegressionTest"/>
+        </classes>
+    </test>
+    <!-- Scheduling ************END ********************************** -->
+
+
+
+</suite>

@@ -1,0 +1,434 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.8
+description = 'Auto Test Web'
+group = 'com.americanwell.autotest_web'
+archivesBaseName = 'autotest_web'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    maven { url "https://dl.bintray.com/epam/reportportal" }
+    maven { url "https://jitpack.io" }
+    maven { url "https://artifactory.americanwell.com/artifactory/libs-all" }
+}
+
+tasks.withType(Test) {
+    useTestNG()
+    scanForTestClasses = false
+
+    testLogging {
+        showStandardStreams = true
+        // log results to 'build/test-results' directory
+        exceptionFormat 'full'
+        events 'started', 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+    }
+    outputs.upToDateWhen {
+        false
+    }
+    // Command line arguments
+    systemProperty 'server', System.getProperty('server')
+    systemProperty 'sequencerUrl', System.getProperty('sequencerUrl')
+    systemProperty 'provisionServer', System.getProperty('provisionServer')
+    systemProperty 'clientVersion', System.getProperty('clientVersion')
+    systemProperty 'provClientVersion', System.getProperty('provClientVersion')
+    systemProperty 'sdkKey', System.getProperty('sdkKey')
+    systemProperty 'provSdkKey', System.getProperty('provSdkKey')
+    systemProperty 'language', System.getProperty('language')
+    systemProperty 'country', System.getProperty('country')
+    systemProperty 'isDBConnection', System.getProperty('isDBConnection')
+}
+
+//Project property that allows us to exclude tests as needed
+//e.g. `gradle test -PexcludeTests=**/PasswordHint*` will exclude tests in PasswordHintTest file
+test {
+    if (project.hasProperty('excludeTests')) {
+        exclude project.property('excludeTests')
+    }
+}
+
+configurations {
+    amwellJar
+}
+
+//These are the minimum libraries you will need for your test project
+dependencies {
+
+    //alias for the framework library for zipAmwellLib task
+    amwellJar('com.americanwell.autoframework:amwell-autoframework:' + version) {
+        transitive = false
+    }
+    compile fileTree(dir: 'jars', includes: ['*.jar'])
+    compile group: 'com.americanwell.autoframework', name: 'amwell-autoframework', version: version
+    compile group: 'io.appium', name: 'java-client', version: '7.2.0'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+    compile 'com.epam.reportportal:client-java:4.0.9'
+    compile 'com.epam.reportportal:agent-java-testng:4.2.1-BETA'
+    compile group: 'com.epam.reportportal', name: 'logger-java-log4j', version: '4.0.1'
+    compile group: 'com.epam.reportportal', name: 'logger-java-logback', version: '4.0.0'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+    compile group: 'xerces', name: 'xercesImpl', version: '2.8.0'
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile 'org.jsoup:jsoup:1.12.1'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+}
+
+task caretalksSmoke(type: Test) {
+    description "Runs suite of smoke tests."
+    options.suites("src/test/resources/smoketest.xml")
+}
+
+task testBilling(type: Test) {
+    description "Billing tests"
+    options.suites("src/test/resources/suites/billingTests.xml")
+}
+
+task testConfiguration(type: Test) {
+    description "Configuration tests"
+    options.suites("src/test/resources/suites/configurationTests.xml")
+}
+
+task testCoupon(type: Test) {
+    description "Coupon tests"
+    options.suites("src/test/resources/suites/couponTests.xml")
+}
+
+task testDemographics(type: Test) {
+    description "Demographics tests"
+    options.suites("src/test/resources/suites/demographicsTests.xml")
+}
+
+task testEngagement(type: Test) {
+    description "Engagement tests"
+    options.suites("src/test/resources/suites/engagementTests.xml")
+}
+
+task testIntakeValidations(type: Test) {
+    description "Intake Validations tests"
+    options.suites("src/test/resources/suites/intakeValidationsTests.xml")
+}
+
+task testEnrollment(type: Test) {
+    description "Enrollment tests"
+    options.suites("src/test/resources/suites/enrollmentTests.xml")
+}
+
+task testLogin(type: Test) {
+    description "Login tests"
+    options.suites("src/test/resources/suites/loginTests.xml")
+}
+
+task caretalksNightly(type: Test) {
+    description "Runs suite of nightly tests."
+    options.suites("src/test/resources/nightly.xml")
+}
+
+task caretalksRegression(type: Test) {
+    description "Runs suite of regression tests."
+    options.suites("src/test/resources/regression.xml")
+}
+
+task testProviderScheduleApptWithUnavailableProvider(type: Test){
+    description "Provider schedule an appointment for a consumer with an unavailable provider"
+    options.suites("src/test/resources/singleTest/providerScheduleApptWithUnavailableProviderTest.xml")
+}
+
+task testMessage(type: Test) {
+    description "Message tests"
+    options.suites("src/test/resources/suites/messageTests.xml")
+}
+
+task testNavigation(type: Test) {
+    description "Navigation tests"
+    options.suites("src/test/resources/suites/navigationTests.xml")
+}
+
+task testProviderAdmin(type: Test) {
+    description "Provider Admin tests"
+    options.suites("src/test/resources/suites/providerAdminTests.xml")
+}
+
+task testScheduling(type: Test) {
+    description "Scheduling tests"
+    options.suites("src/test/resources/suites/schedulingTests.xml")
+}
+
+task testLoginOnly(type: Test) {
+    description "Consumer Login Test"
+    options.suites("src/test/resources/logintest.xml")
+}
+
+task testSanity(type: Test) {
+    description "Web Sanity Test"
+    options.suites("src/test/resources/suites/sanity.xml")
+}
+
+task testEpicCAL(type: Test) {
+    description "Epic CAL Test"
+    options.suites("src/test/resources/suites/epicCALTests.xml")
+}
+
+ext.writeFile = { String filePath, ArrayList<String> lines ->
+    PrintWriter writer = new PrintWriter(new FileWriter(filePath))
+    int count = 1
+    int lastLine = lines.size()
+
+    for (String line : lines) {
+        if (count == lastLine) {
+            writer.print(line)
+        } else {
+            writer.println(line)
+        }
+        count++
+    }
+    writer.close()
+}
+
+task zipAmwellLib(type: Zip) {
+    description 'Locally zip the Amwell-Autoframework dependency from Artifactory'
+    println('Zipping amwell_autoframework Artifactory jar...')
+    from({ zipTree(configurations.amwellJar.singleFile) }) {
+    }
+}
+
+task copyArtifactoryConfig(dependsOn: zipAmwellLib) {
+    description 'Copy config.sample from framework Artifactory dependency and rename it to config.yaml. This will overwrite and existing file'
+    doLast() {
+        copy {
+            println("ARTIFACTORY FROMDIR: " + String.format('build/distributions/%s-%s.zip', archivesBaseName, version))
+            String fromDir = String.format('build/distributions/%s-%s.zip', archivesBaseName, version)
+            String toDir = 'src/test/resources'
+            String fileName = 'config.sample'
+            String newFileName = 'config.yaml'
+
+            println(String.format('Copying file "%s" and renaming to "%s"...', fileName, newFileName))
+            from zipTree(fromDir).matching {
+                include(fileName)
+            }
+            into toDir
+            rename(fileName, newFileName)
+        }
+    }
+}
+
+task moveBambooArtifactJar() {
+    description 'Copy the framework jar artifact into jars dir. This will overwrite an existing file'
+    doLast() {
+        copy {
+            println('Copying Bamboo shared amwell_autoframework artifact into the jars/ directory...')
+            String fromDir = './'
+            String toDir = 'jars'
+            String fileName = String.format('amwell-autoframework-%s.jar', version)
+
+            println(String.format('Copying file "%s" into %s/ directory...', fileName, toDir))
+            from fromDir
+            into toDir
+            include(fileName)
+        }
+    }
+}
+
+task commentOutArtifactoryJar() {
+    description 'Comment out the dependency on the framework Artifactory jar'
+    doLast() {
+        println('Commenting out the amwell_autoframework Artifactory dependency...')
+        String filePath = 'build.gradle'
+        BufferedReader reader = new BufferedReader(new FileReader(filePath))
+        ArrayList<String> lines = new ArrayList<>()
+
+        //read the file and add/modify the lines from file
+        String lineIn
+        while ((lineIn = reader.readLine()) != null) {
+            if (lineIn.startsWith('    compile group: \'com.americanwell.autoframework\'')) {
+                lineIn = lineIn.replace('compile', '//compile')
+                lines.add(lineIn)
+            } else {
+                lines.add(lineIn)
+            }
+        }
+        reader.close()
+
+        //write the file
+        writeFile(filePath, lines)
+        println('Finished writing "' + filePath + '" file...')
+    }
+}
+
+task copyJarConfig(dependsOn: commentOutArtifactoryJar) {
+    description 'Copy config.sample from jars dir and rename it to config.yaml. This will overwrite an existing file'
+    doLast() {
+        copy {
+            String fromDir = 'jars/amwell-autoframework-' + version + '.jar'
+            String toDir = 'src/test/resources'
+            String fileName = 'config.sample'
+            String newFileName = 'config.yaml'
+
+            println(String.format('Copying file "%s" and renaming to "%s"...', fileName, newFileName))
+            from zipTree(fromDir).matching {
+                include(fileName)
+            }
+            into toDir
+            rename(fileName, newFileName)
+        }
+    }
+}
+
+task buildCIConfig() {
+    description 'Parse Bamboo server config and update config.yaml with its mapping for CI run only'
+    doLast() {
+        println('Parsing values from ng.properties file...')
+        //parse the ng.properties file
+        Properties props = new Properties()
+        file('ng.properties').withInputStream { props.load(it) }
+        String serverUrl = props.getProperty('deployment.url')
+        String dbURL = props.getProperty('dbPublicConnectionString')
+        String dbUsername = props.getProperty('hibernate.connection.username')
+
+        String filePath = 'src/test/resources/config.yaml'
+        BufferedReader reader = new BufferedReader(new FileReader(filePath))
+
+        boolean isBambooSet = false;
+        String lineIn
+        while ((lineIn = reader.readLine()) != null) {
+            if (lineIn == '  - bamboo-ci:') {
+                isBambooSet = true
+                break
+            }
+        }
+        reader.close()
+
+        if (!isBambooSet) {
+            println('Finished writing "' + filePath + '" file...')
+            println("Adding Bamboo server config to Caretalks servers section...")
+            //update config.yaml with Bamboo CI system properties
+            String mailHogHost = 'http://34.193.117.40'
+            String autoResponderHost = 'http://172.31.13.182'
+            File configFile = new File('src/test/resources/config.yaml')
+            configFile.append(String.format('\n  - bamboo-ci:\n      <<: *DEFAULT\n      serverUrl: "%s"\n      databaseUrl: "%s"' +
+                    '\n      databaseUsername: "%s"\n      mailhogHost: "%s"\n' +
+                    '      autoResponderHost: "%s"', serverUrl, dbURL, dbUsername, mailHogHost, autoResponderHost))
+       } else {
+            println('Bamboo server object already detected in config...')
+        }
+    }
+}
+
+task copyReportPortal() {
+    description 'Copy reportportal.properties.sample and rename to reportportal.properties. This will overwrite an existing file'
+    doLast() {
+        copy {
+            String fromDir = 'src/main/resources'
+            String toDir = fromDir
+            String fileName = 'reportportal.properties.sample'
+            String newFileName = 'reportportal.properties'
+
+            println(String.format('Copying file "%s" and renaming to "%s"...', fileName, newFileName))
+            from fromDir
+            into toDir
+            include(fileName)
+            rename(fileName, newFileName)
+        }
+    }
+}
+
+task buildCIReportPortal(dependsOn: copyReportPortal) {
+    description 'Build reportportal.properties file for Bamboo CI run. Overwrites pre-existing configurations for a clean run'
+    doLast() {
+        println('Building reportportal.properties for Bambo CI run...')
+        String filePath = 'src/main/resources/reportportal.properties'
+        BufferedReader reader = new BufferedReader(new FileReader(filePath))
+        ArrayList<String> lines = new ArrayList<>()
+
+        //read the file and add/modify the lines from file
+        String lineIn
+        while ((lineIn = reader.readLine()) != null) {
+            if (lineIn.contains('rp.uuid=')) {
+                lineIn = String.format('rp.uuid=%s', System.getProperty('rpUUID'))
+                println(lineIn)
+                lines.add(lineIn)
+            } else if (lineIn.contains('rp.launch=')) {
+                lineIn = String.format('rp.launch=%s', System.getProperty('rpLaunch'))
+                println(lineIn)
+                lines.add(lineIn)
+            } else if (lineIn.contains('rp.project=')) {
+                lineIn = String.format('rp.project=%s', System.getProperty('rpProject'))
+                println(lineIn)
+                lines.add(lineIn)
+            } else if (lineIn.contains('rp.description=')) {
+                lineIn = String.format('rp.description=%s', System.getProperty('rpDescription'))
+                println(lineIn)
+                lines.add(lineIn)
+            } else if (lineIn.contains('rp.tags=')) {
+                lineIn = String.format('rp.tags=%s', System.getProperty('rpTags'))
+                println(lineIn)
+                lines.add(lineIn)
+            } else {
+                lines.add(lineIn)
+            }
+        }
+        reader.close()
+
+        //write the file
+        writeFile(filePath, lines)
+        println('Finished writing "' + filePath + '" file...')
+    }
+}
+
+task cleanProject(type: Delete) {
+    println 'project name: ' + project.name
+    delete project.name + '.tar.gz', project.name + '/gradle', project.name + '/lib', project.name + '/logs', project.name + '/src',
+            fileTree(dir: project.name, exclude: 'build.gradle')
+}
+
+/**
+ * Copy dependencies that exist outside of the project lib directory
+ */
+task copyFiles(type: Copy, dependsOn: ['cleanProject', 'compileTestJava']) {
+    from('.')
+    into(project.name)
+    include('gradle.properties', 'gradlew.bat', 'gradlew', 'src/test/resources/**/*', 'gradle/wrapper/*', 'parseNGProperties.sh', 'src/main/resources/*',
+            'jars/CheckWebRTC.jar', 'jars/ToggleWebRTC.jar')
+}
+
+/**
+ * Copy the runtime libs to the lib directory in the distribution sub-directory
+ */
+task copyDependencies(type: Copy, dependsOn: ['cleanProject', 'compileTestJava']) {
+    from configurations.runtime {
+        exclude 'amwell-autoframework-1.0-SNAPSHOT.jar'
+    }
+    from configurations.testCompile
+    from fileTree(dir: 'lib').matching{ include '*.exe', '*.dll' }
+    into(project.name + '/lib')
+}
+
+task buildJar(type: Jar, dependsOn: ['copyDependencies', 'copyFiles']) {
+    manifest {
+        attributes 'Class-Path': '*'
+    }
+    archiveFileName = project.name + '.jar'
+    from fileTree('build/classes/java/main')
+    from fileTree('build/classes/java/test')
+    into('src/test/resources') {
+        from fileTree('src/test/resources')
+    }
+    with jar
+}
+
+task copyJar(type: Copy, dependsOn: buildJar) {
+    from('build/libs/' + project.name + '.jar')
+    into(project.name + '/lib')
+}
+
+task gzip(type: Tar, dependsOn: copyJar) {
+    from project.name
+    archiveFileName = project.name + '.tar.gz'
+    destinationDirectory = file('.')
+    compression = Compression.GZIP
+}
+compileTestJava.mustRunAfter cleanProject

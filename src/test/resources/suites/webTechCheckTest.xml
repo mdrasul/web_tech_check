@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Tech Widget Smoke Suite" verbose ="3" parallel="methods" thread-count = "10">
+
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="Web Tech Widget Check Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test"/>
+        </classes>
+    </test>
+
+</suite>

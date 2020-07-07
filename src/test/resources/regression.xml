@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Visit Test Suite" verbose="3" parallel="tests" thread-count="10">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="Multi-way Visit Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.MultiwayWebRTCVisitRegressionTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Billing Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitBillingRegressionTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Scheduling Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitSchedulingRegressionTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Intake Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitIntakeRegressionTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitRegressionTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Wrap Up Tests" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitWrapUpRegressionTest"/>
+        </classes>
+    </test>
+
+</suite>

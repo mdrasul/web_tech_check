@@ -1,0 +1,54 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke Test Suite" verbose ="3" parallel="tests" thread-count="1">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="Consumer Login Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ConsumerLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Provider Login Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ProviderLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Consumer Navigation Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.ConsumerNavigationTest"/>
+        </classes>
+    </test>
+
+    <test name="Provider Navigation Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.ProviderNavigationTest"/>
+        </classes>
+    </test>
+
+    <test name="Admin Navigation Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.AdminNavigationTest"/>
+        </classes>
+    </test>
+
+    <test name="Staff Navigation Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.navigationTests.StaffNavigationTest"/>
+        </classes>
+    </test>
+
+    <test name = "Consumer Enrollment Test" enabled="false">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.enrollmentTests.ConsumerEnrollmentTest"/>
+        </classes>
+    </test>
+
+    <test name="Visit Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.regression.VisitRegressionTest"/>
+        </classes>
+    </test>
+</suite>

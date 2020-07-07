@@ -1,0 +1,57 @@
+plugins {
+    id 'base'
+    id 'java'
+}
+
+repositories {
+    maven { url "https://artifactory.americanwell.com/artifactory/libs-all" }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+    compile group: 'com.americanwell.autoframework', name: 'amwell-autoframework', version: '1.0-SNAPSHOT'
+}
+
+tasks.withType(Test) {
+    useTestNG()
+    scanForTestClasses = false
+    testLogging.showStandardStreams = true
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+    onOutput { descriptor, event ->
+        logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message)
+    }
+    outputs.upToDateWhen {
+        false
+    }
+    systemProperties(System.getProperties())
+}
+
+tasks.withType(JavaExec) {
+    systemProperties(System.getProperties())
+}
+
+task caretalksSmoke(type:JavaExec) {
+    description "Runs smoke test."
+    main = 'org.testng.TestNG'
+    classpath = configurations.compile
+    args '-testjar', 'lib/' + project.name + '.jar', '-xmlpathinjar', 'src/test/resources/smoketest.xml'
+}
+
+task testProviderScheduleApptWithUnavailableProvider(type: JavaExec){
+    description "Provider schedule an appointment for a consumer with an unavailable provider"
+    main = 'org.testng.TestNG'
+    classpath = configurations.compile
+    args '-testjar', 'lib/' + project.name + '.jar', '-xmlpathinjar', 'src/test/resources/singleTest/providerScheduleApptWithUnavailableProviderTest.xml'
+}
+
+task testProviderSendSecureMessageToConsumer(type: JavaExec){
+    description "Provider send secure message to consumer"
+    main = 'org.testng.TestNG'
+    classpath = configurations.compile
+    args '-testjar', 'lib/' + project.name + '.jar', '-xmlpathinjar', 'src/test/resources/singleTest/providerSendMessageToConsumerTest.xml'
+}
+
+description = project.name
+version = '0.1'

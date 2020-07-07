@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Login Test Suite" verbose ="3" parallel="tests" thread-count="1">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="Consumer Login Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.caretalks.loginTests.ConsumerLoginTest"/>
+        </classes>
+    </test>
+</suite>

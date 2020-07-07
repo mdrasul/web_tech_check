@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" verbose="3" name="Failed suite [Web Tech Widget Smoke Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+  </listeners>
+  <test thread-count="10" verbose="3" name="Web Tech Widget Check Test(failed)" parallel="methods">
+    <classes>
+      <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
+        <methods>
+          <include name="ramDown"/>
+          <include name="webTectCheckSampleTest"/>
+          <include name="webTectCheckSampleTest2"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->
+    </classes>
+  </test> <!-- Web Tech Widget Check Test(failed) -->
+</suite> <!-- Failed suite [Web Tech Widget Smoke Suite] -->
