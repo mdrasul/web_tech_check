@@ -72,6 +72,9 @@ public class WebTechCheck_Test
         Assert.assertTrue(techCheckPage.letsGetStartWithMicrofoneYes(), "Failed on Navigating to Mic widget by clicking Yes... ");
         Assert.assertTrue(techCheckPage.letsGetStartWithSpeakerYes(), "Failed on Navigating to Speaker widget by clicking Yes... ");
         Assert.assertTrue(techCheckPage.letsGetStartWithSpeedTestYes(), "Failed on Navigating to Speed Test widget by clicking Yes... ");
+        
+        // Assert If list not contains Fail "Failed On " + restunlist.tostring 
+        
     }
     
   

@@ -10,7 +10,6 @@
         <methods>
           <include name="ramDown"/>
           <include name="webTectCheckSampleTest"/>
-          <include name="webTectCheckSampleTest2"/>
           <include name="init"/>
         </methods>
       </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->

@@ -2,26 +2,26 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5481" started-at="2020-07-07T13:56:12Z" finished-at="2020-07-07T13:56:17Z">
+  <suite name="Web Tech Widget Smoke Suite" duration-ms="41217" started-at="2020-07-07T17:41:28Z" finished-at="2020-07-07T17:42:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5481" started-at="2020-07-07T13:56:12Z" finished-at="2020-07-07T13:56:17Z">
+    <test name="Web Tech Widget Check Test" duration-ms="41217" started-at="2020-07-07T17:41:28Z" finished-at="2020-07-07T17:42:09Z">
       <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@77eca502]" name="init" is-config="true" duration-ms="2285" started-at="2020-07-07T13:56:12Z" finished-at="2020-07-07T13:56:14Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@59e505b2]" name="init" is-config="true" duration-ms="3281" started-at="2020-07-07T17:41:28Z" finished-at="2020-07-07T17:41:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="webTectCheckSampleTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@77eca502]" name="webTectCheckSampleTest" duration-ms="2572" started-at="2020-07-07T13:56:14Z" description="Web Tech Check Putting the &quot;Test my Computer&quot; widget together" finished-at="2020-07-07T13:56:17Z">
+        <test-method status="FAIL" signature="webTectCheckSampleTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@59e505b2]" name="webTectCheckSampleTest" duration-ms="37048" started-at="2020-07-07T17:41:31Z" description="Web Tech Check Putting the &quot;Test my Computer&quot; widget together" finished-at="2020-07-07T17:42:08Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Failed to launch Tech Check Page...  expected [true] but found [false]]]>
+              <![CDATA[Failed on Navigating to Mic widget by clicking Yes...  expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Failed to launch Tech Check Page...  expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: Failed on Navigating to Mic widget by clicking Yes...  expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertTrue(Assert.java:44)
-at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSampleTest(WebTechCheck_Test.java:70)
+at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSampleTest(WebTechCheck_Test.java:72)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -32,32 +32,20 @@ at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- webTectCheckSampleTest -->
-        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@77eca502]" name="ramDown" is-config="true" duration-ms="603" started-at="2020-07-07T13:56:17Z" finished-at="2020-07-07T13:56:17Z">
+        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@59e505b2]" name="ramDown" is-config="true" duration-ms="730" started-at="2020-07-07T17:42:08Z" finished-at="2020-07-07T17:42:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ramDown -->
       </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Web Tech Widget Check Test -->
+  </suite> <!-- Web Tech Widget Smoke Suite -->
 </testng-results>
