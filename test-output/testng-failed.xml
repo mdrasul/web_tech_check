@@ -6,8 +6,8 @@
       <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
         <methods>
           <include name="ramDown"/>
+          <include name="webTectCheckInternetTest"/>
           <include name="init"/>
-          <include name="fullTestonAllDevice"/>
         </methods>
       </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->
     </classes>

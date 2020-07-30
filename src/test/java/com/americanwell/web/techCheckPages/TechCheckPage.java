@@ -34,7 +34,33 @@ public class TechCheckPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	/** ##### Page Locators (XPATH, CSS etc) ##### */
+	/** #####  TechCheck Page Returning methord ##### */
+	
+	public MicrophoneWidget microphoneWidget() {
+		return new MicrophoneWidget(driver);
+	}
+	public CameraWidget cameraWidget() {
+		return new CameraWidget(driver);
+		
+	}
+	public InternetSpeedWidget internetSpeedWidget() {
+		return new InternetSpeedWidget(driver);
+		
+	}
+	public SpeakerWidget speakerWidget() {
+		return new SpeakerWidget(driver);
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@FindBy(xpath = "//button[@class='awcore-tmc-step-pass-button']")
 	private WebElement clickStartTest;

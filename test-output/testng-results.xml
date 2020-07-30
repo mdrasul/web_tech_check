@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+<testng-results skipped="0" failed="1" ignored="4" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="108185" started-at="2020-07-28T18:34:07Z" finished-at="2020-07-28T18:35:55Z">
+  <suite name="Default suite" duration-ms="194458" started-at="2020-07-30T19:30:56Z" finished-at="2020-07-30T19:34:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="108185" started-at="2020-07-28T18:34:07Z" finished-at="2020-07-28T18:35:55Z">
+    <test name="Default test" duration-ms="194458" started-at="2020-07-30T19:30:56Z" finished-at="2020-07-30T19:34:11Z">
       <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="init" is-config="true" duration-ms="2312" started-at="2020-07-28T18:34:07Z" finished-at="2020-07-28T18:34:10Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="init" is-config="true" duration-ms="6818" started-at="2020-07-30T19:30:56Z" finished-at="2020-07-30T19:31:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="webTectCheckInternetTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="webTectCheckInternetTest" duration-ms="82835" started-at="2020-07-28T18:34:10Z" finished-at="2020-07-28T18:35:32Z">
+        <test-method status="FAIL" signature="webTectCheckInternetTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="webTectCheckInternetTest" duration-ms="186957" started-at="2020-07-30T19:31:03Z" finished-at="2020-07-30T19:34:10Z">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index: 0, Size: 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+at java.util.ArrayList.rangeCheck(Unknown Source)
+at java.util.ArrayList.get(Unknown Source)
+at com.americanwell.web.techCheckPages.InternetSpeedWidget.TestInternetPingresult(InternetSpeedWidget.java:102)
+at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckInternetTest(WebTechCheck_Test.java:164)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- webTectCheckInternetTest -->
-        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="ramDown" is-config="true" duration-ms="700" started-at="2020-07-28T18:35:32Z" finished-at="2020-07-28T18:35:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ramDown -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="init" is-config="true" duration-ms="1245" started-at="2020-07-28T18:35:33Z" finished-at="2020-07-28T18:35:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="webTectCheckMicTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="webTectCheckMicTest" duration-ms="8996" started-at="2020-07-28T18:35:34Z" finished-at="2020-07-28T18:35:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- webTectCheckMicTest -->
-        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="ramDown" is-config="true" duration-ms="661" started-at="2020-07-28T18:35:43Z" finished-at="2020-07-28T18:35:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ramDown -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="init" is-config="true" duration-ms="1361" started-at="2020-07-28T18:35:44Z" finished-at="2020-07-28T18:35:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="webTectCheckSpeakerTest()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="webTectCheckSpeakerTest" duration-ms="9412" started-at="2020-07-28T18:35:45Z" finished-at="2020-07-28T18:35:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- webTectCheckSpeakerTest -->
-        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="ramDown" is-config="true" duration-ms="647" started-at="2020-07-28T18:35:55Z" finished-at="2020-07-28T18:35:55Z">
+        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebTechCheck_Test@20ccf40b]" name="ramDown" is-config="true" duration-ms="661" started-at="2020-07-30T19:34:10Z" finished-at="2020-07-30T19:34:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ramDown -->
