@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Web Tech Widget Check Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 15 10:04:52 EDT 2020</td>
+<td>Started on:</td><td>Thu Aug 06 20:00:34 EDT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>8 seconds (8322 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14192 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,19 +75,24 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSpeakerTest()'><b>webTectCheckSpeakerTest</b><br>Test class: com.americanwell.autotest_web.techCheck.WebTechCheck_Test<br>Test method: Test Speaker is Working<br/>
-<a href="#Output-476749348" onClick='toggleBox("Output-476749348", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-476749348" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-476749348">
-Screenshot saved to: C:\Users\MD.Rasul\eclipse-workspace\autotest_web\.\test-output\images\webTectCheckSpeakerTest_driver.png<br/>
-</div>
-</td>
-<td><div><pre>java.lang.AssertionError: failed.. expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSpeakerTest(WebTechCheck_Test.java:123)
+<td title='com.americanwell.autotest_web.techCheck.WebTechCheck_Test.fullTestonAllDevice()'><b>fullTestonAllDevice</b><br>Test class: com.americanwell.autotest_web.techCheck.WebTechCheck_Test</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;BOS-LAP-MDRASUL&apos;, ip: &apos;10.7.5.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy32.click(Unknown Source)
+	at com.americanwell.web.techCheckPages.BasePage.clickYes(BasePage.java:109)
+	at com.americanwell.web.techCheckPages.TechCheckPage.letsGetStartWithMicrofoneYes(TechCheckPage.java:100)
+	at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.fullTestonAllDevice(WebTechCheck_Test.java:75)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -101,12 +106,24 @@ Screenshot saved to: C:\Users\MD.Rasul\eclipse-workspace\autotest_web\.\test-out
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
-</pre></div><a href='#' onClick='toggleBox("stack-trace476749348", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace476749348'><pre>java.lang.AssertionError: failed.. expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
-	at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSpeakerTest(WebTechCheck_Test.java:123)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2002169905", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2002169905'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;BOS-LAP-MDRASUL&apos;, ip: &apos;10.7.5.49&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy32.click(Unknown Source)
+	at com.americanwell.web.techCheckPages.BasePage.clickYes(BasePage.java:109)
+	at com.americanwell.web.techCheckPages.TechCheckPage.letsGetStartWithMicrofoneYes(TechCheckPage.java:100)
+	at com.americanwell.autotest_web.techCheck.WebTechCheck_Test.fullTestonAllDevice(WebTechCheck_Test.java:75)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -121,8 +138,8 @@ Screenshot saved to: C:\Users\MD.Rasul\eclipse-workspace\autotest_web\.\test-out
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>0</td>
-<td>com.americanwell.autotest_web.techCheck.WebTechCheck_Test@73302995</td></tr>
+<td>6</td>
+<td>com.americanwell.autotest_web.techCheck.WebTechCheck_Test@324a0017</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -132,15 +149,10 @@ Screenshot saved to: C:\Users\MD.Rasul\eclipse-workspace\autotest_web\.\test-out
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckMicTest()'><b>webTectCheckMicTest</b><br>Test class: com.americanwell.autotest_web.techCheck.WebTechCheck_Test<br>Test method: Test mic is Working</td>
+<td title='com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckMicTest()'><b>webTectCheckMicTest</b><br>Test class: com.americanwell.autotest_web.techCheck.WebTechCheck_Test</td>
 <td></td>
-<td>3</td>
-<td>com.americanwell.autotest_web.techCheck.WebTechCheck_Test@73302995</td></tr>
-<tr>
-<td title='com.americanwell.autotest_web.techCheck.WebTechCheck_Test.webTectCheckSampleTest()'><b>webTectCheckSampleTest</b><br>Test class: com.americanwell.autotest_web.techCheck.WebTechCheck_Test<br>Test method: Web Tech Check Putting the "Test my Computer" widget together</td>
-<td></td>
-<td>3</td>
-<td>com.americanwell.autotest_web.techCheck.WebTechCheck_Test@73302995</td></tr>
+<td>4</td>
+<td>com.americanwell.autotest_web.techCheck.WebTechCheck_Test@324a0017</td></tr>
 </table><p>
 </body>
 </html>

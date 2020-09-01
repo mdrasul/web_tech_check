@@ -1,0 +1,19 @@
+
+<suite name="Web Tech Widget Smoke Suite" verbose ="3" parallel="methods" thread-count = "10">
+
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+    </listeners>
+
+    <test name="Web Tech Widget Check Test" enabled="true">
+        <classes>
+            <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test"/>
+
+				<methods>
+					<include name="fullTestonAllDevice" />
+				</methods>
+       			
+        </classes>
+    </test>
+
+</suite>

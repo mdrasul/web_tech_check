@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 @Listeners({TestListener.class})
@@ -20,7 +22,7 @@ public class BaseTest {
 	protected static Map<String, SessionData> sessions = new ConcurrentHashMap(32, 0.75F, 32);
 	protected static ThreadLocal<String> testName = new ThreadLocal();
 
-	@BeforeClass
+	 @BeforeMethod
 	public void btBeforeClass(ITestContext ctx) {
 		log.debug("=================================================");
 		log.debug("@btBeforeClass starting test -> {}", ctx.getName());
@@ -56,7 +58,7 @@ public static void addSession(WebDriver driver) {
 
 	}
 
-	@AfterClass(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	protected void btAfterClass(ITestContext itc) {
 		log.debug("========================");
 		log.debug("@btAfterClass -> {}", itc.getName());

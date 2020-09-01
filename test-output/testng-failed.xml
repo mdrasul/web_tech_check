@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
+      <class name="com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest">
         <methods>
-          <include name="ramDown"/>
-          <include name="webTectCheckInternetTest"/>
           <include name="init"/>
+          <include name="ramDown"/>
+          <include name="alidateAssetUploadingUsingAdminUI"/>
         </methods>
-      </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->
+      </class> <!-- com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
