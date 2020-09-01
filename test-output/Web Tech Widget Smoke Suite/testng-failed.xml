@@ -9,9 +9,10 @@
       <class name="com.americanwell.autotest_web.techCheck.WebTechCheck_Test">
         <methods>
           <include name="ramDown"/>
-          <include name="webTectCheckSampleTest"/>
-          <include name="webTectCheckSampleTest2"/>
+          <include name="btBeforeClass"/>
+          <include name="webTectCheckSpeakerTest"/>
           <include name="init"/>
+          <include name="btAfterClass"/>
         </methods>
       </class> <!-- com.americanwell.autotest_web.techCheck.WebTechCheck_Test -->
     </classes>

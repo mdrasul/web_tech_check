@@ -27,3 +27,4 @@ src/main/resources/reportportal.properties
 /.project
 /.settings/
 /bin/
+/test-output/
