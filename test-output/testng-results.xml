@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11931" started-at="2020-09-01T14:56:42Z" finished-at="2020-09-01T14:56:54Z">
+  <suite name="Default suite" duration-ms="3276" started-at="2020-10-09T16:14:18Z" finished-at="2020-10-09T16:14:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11931" started-at="2020-09-01T14:56:42Z" finished-at="2020-09-01T14:56:54Z">
-      <class name="com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest@47987356]" name="init" is-config="true" duration-ms="6168" started-at="2020-09-01T14:56:42Z" finished-at="2020-09-01T14:56:48Z">
+    <test name="Default test" duration-ms="3276" started-at="2020-10-09T16:14:18Z" finished-at="2020-10-09T16:14:22Z">
+      <class name="com.amwell.TenantAPI.TestCase.TenantServiceAutomatedTest">
+        <test-method status="PASS" signature="crateTenantUsingPostMethod()[pri:0, instance:com.amwell.TenantAPI.TestCase.TenantServiceAutomatedTest@62379589]" name="crateTenantUsingPostMethod" duration-ms="2270" started-at="2020-10-09T16:14:18Z" finished-at="2020-10-09T16:14:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="alidateAssetUploadingUsingAdminUI()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest@47987356]" name="alidateAssetUploadingUsingAdminUI" duration-ms="5110" started-at="2020-09-01T14:56:48Z" finished-at="2020-09-01T14:56:54Z">
+        </test-method> <!-- crateTenantUsingPostMethod -->
+        <test-method status="PASS" signature="getTenantInfoUsingGetMethod()[pri:0, instance:com.amwell.TenantAPI.TestCase.TenantServiceAutomatedTest@62379589]" name="getTenantInfoUsingGetMethod" duration-ms="464" started-at="2020-10-09T16:14:21Z" finished-at="2020-10-09T16:14:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- alidateAssetUploadingUsingAdminUI -->
-        <test-method status="PASS" signature="ramDown()[pri:0, instance:com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest@47987356]" name="ramDown" is-config="true" duration-ms="635" started-at="2020-09-01T14:56:54Z" finished-at="2020-09-01T14:56:54Z">
+        </test-method> <!-- getTenantInfoUsingGetMethod -->
+        <test-method status="PASS" signature="updateTenantInfoUsingPutMethod()[pri:0, instance:com.amwell.TenantAPI.TestCase.TenantServiceAutomatedTest@62379589]" name="updateTenantInfoUsingPutMethod" duration-ms="525" started-at="2020-10-09T16:14:21Z" finished-at="2020-10-09T16:14:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ramDown -->
-      </class> <!-- com.americanwell.autotest_web.techCheck.WebBasicTenantAssetTest -->
+        </test-method> <!-- updateTenantInfoUsingPutMethod -->
+      </class> <!-- com.amwell.TenantAPI.TestCase.TenantServiceAutomatedTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
